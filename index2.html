@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<body>
+    <script>
+    function login() {
+      const telahome = document.getElementById('home').style.display
+      let usuario = document.getElementById('user').value;
+      let senha = document.getElementById('password').value;
+
+      if (usuario === 'jb' && senha === '123') {
+        alert('Login bem-sucedido!');
+         mostrarHome();
+         ocultarLogin();
+      } else {
+        alert('Usuário ou senha incorretos. Tente novamente.');
+      }
+      function logout() {
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('login').style.display = 'block';
+      }
+
+      function mostrarHome() {
+        document.getElementById('home').style.display = 'block';
+      }
+
+      function ocultarLogin() {
+        document.getElementById('login').style.display = 'none';
+      }
+    
+    }
+    
+    </script>
+    <section class="" id="login">
+        <h1>Login</h1>
+            <label for="usuario">Usuário:</label>
+            <input type="email" id="user"  required placeholder="jb"><br><br>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password"  required placeholder="123"><br><br>
+
+            <button type="button" value="entrar" onclick="login()" class="btn btn-primary">Entrar</button>
+          
+     </section>
+
+     <section class="" id="home" style="display: none;">
+        <div>
+            <h1>Bem-vindo!</h1>
+        </div>
+        <button type="button" value="entrar" onclick="logout()" class="btn btn-primary">Sair</button>
+     </section>
+</body>
+</html>
